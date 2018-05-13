@@ -1,4 +1,14 @@
 {
   "name": "Temp-Bookmarker",
-  "version": "0.1"
+  "short_name": "Tempmarker",
+  "version": "0.1",
+  "manifest_version": 2,
+  "description": "一時的なブックマーク機能を追加します。",
+  "content_scripts": [
+    {
+      "matches": ["http://*.jp/*"],
+      "js":["js/lib/jquery-3.3.1.min.js", "js/test.js"],
+      "run_at": "document_idle"
+    }
+  ]
 }
