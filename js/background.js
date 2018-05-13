@@ -11,3 +11,6 @@ chrome.tabs.onRemoved.addListener(function(tab){
   counter--;
   chrome.browserAction.setBadgeText({text:String(counter)});
 })
+var getCounter = function() {
+  return counter;
+}

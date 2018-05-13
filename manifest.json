@@ -14,15 +14,9 @@
   },
   "browser_action": {
     "default_icon": "icons/icon_16.png",
-    "default_title": "Tempmarker"
+    "default_title": "Tempmarker",
+    "default_popup": "popup.html"
   },
-  "content_scripts": [
-    {
-      "matches": ["http://*.jp/*"],
-      "js":["js/lib/jquery-3.3.1.min.js", "js/test.js"],
-      "run_at": "document_idle"
-    }
-  ],
   "background": {
     "scripts": ["js/background.js"]
   }
