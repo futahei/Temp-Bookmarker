@@ -12,7 +12,6 @@ function notify() {
 
   else if (Notification.permission === "granted") {
     allowNotify = true
-    var notification = new Notification("Hi!")
   }
 
   else if (Notification.permission === "default") {
