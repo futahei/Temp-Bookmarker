@@ -1,5 +1,5 @@
 # Temp-Bookmarker
-一時的なブクマを追加するChrome拡張
+一時的なブクマを追加するChrome拡張。
 
 # Usage
 1. cloneするかzipでDL
@@ -12,3 +12,5 @@
 Ctrl+Bで保存されます。
 
 まだバグあります。たぶん。
+
+[English](README.en.md)
