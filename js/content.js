@@ -1,4 +1,4 @@
-
+/*
 var allowNotify = false
 
 function notify() {
@@ -26,6 +26,7 @@ function notify() {
 }
 
 notify()
+*/
 
 var page = {
   title: document.title,
@@ -45,7 +46,7 @@ document.onkeydown = function (e) {
 
 // 被ってるやつ削除しつつ保存
 function save() {
-  var not = new Notification("Save Tempmark")
+  //var not = new Notification("Save Tempmark")
   for(var i=0;i<data.length;i++) {
     if(data[i].url==page.url)data.splice(i,1);
   }
