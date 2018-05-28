@@ -20,8 +20,8 @@ function save() {
     if(data[i].url==page.url)data.splice(i,1);
   }
   data.unshift(page)
-  if (data.length>10) {
-    data.length = 10
+  if (data.length>20) {
+    data.length = 20
   }
   chrome.storage.local.set({'tempmark': data },function() {
     if (chrome.runtime.error) {
