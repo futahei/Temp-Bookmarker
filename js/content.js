@@ -1,32 +1,3 @@
-/*
-var allowNotify = false
-
-function notify() {
-  if(!("Notification" in window)) {
-    return;
-  }
-
-  else if (Notification.permission === "denied") {
-    allowNotify = false
-  }
-
-  else if (Notification.permission === "granted") {
-    allowNotify = true
-  }
-
-  else if (Notification.permission === "default") {
-    Notification.requestPermission(function(permission) {
-      if(permission==="granted") {
-        allowNotify = true
-      } else {
-        allowNotify = false
-      }
-    })
-  }
-}
-
-notify()
-*/
 
 var page = {
   title: document.title,
@@ -46,7 +17,6 @@ document.onkeydown = function (e) {
 
 // 被ってるやつ削除しつつ保存
 function save() {
-  //var not = new Notification("Save Tempmark")
   for(var i=0;i<data.length;i++) {
     if(data[i].url==page.url)data.splice(i,1);
   }
@@ -54,9 +24,15 @@ function save() {
   if (data.length>10) {
     data.length = 10
   }
+
   chrome.storage.local.set({'tempmark': data },function() {
     if (chrome.runtime.error) {
       console.log("tempmark error")
     }
   });
+
+  //pageURLに識別用のtag"notify"をつけてメッセージ通信用にwrapする
+  const notifyData = {tag: "notify", message:document.title}
+  //background.jsに送信する
+  chrome.runtime.sendMessage(notifyData)
 }
