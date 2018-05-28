@@ -1,3 +1,10 @@
+chrome.runtime.sendMessage(
+  {
+    "test": "This is test."
+  }
+);
+
+/*
 var page = {
   title: document.title,
   url: document.location.href
@@ -28,4 +35,4 @@ function save() {
       console.log("tempmark error")
     }
   });
-}
+}*/

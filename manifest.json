@@ -8,6 +8,9 @@
     "tabs",
     "storage"
   ],
+  "background": {
+    "scripts":["js/background.js"]
+  },
   "content_scripts": [
     {
       "matches": ["http://*/*", "https://*/*"],
