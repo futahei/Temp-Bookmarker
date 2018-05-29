@@ -1,8 +1,23 @@
-chrome.runtime.sendMessage(
-  {
-    "test": "This is test."
+// ページ情報
+var page = {
+  title: document.title,
+  url: document.location.href
+}
+
+chrome.runtime.sendMessage({
+  "type": "updateIcon",
+  "page": page
+})
+
+// Ctrl+Bで一時保存をリクエスト
+document.onkeydown = function (e) {
+  if (e.ctrlKey&&e.keyCode==66) {
+    chrome.runtime.sendMessage({
+      "type": "savePage",
+      "page": page
+    });
   }
-);
+}
 
 /*
 var page = {

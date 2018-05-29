@@ -26,9 +26,7 @@ chrome.storage.local.get('tempmark', function(temp){
 function deleteone(id, title) {
   $(id).remove()
   data.some(function(v,index) {
-    if(v.title==title) {
-      data.splice(index, 1)
-    }
+    if(v.title==title) data.splice(index, 1)
   });
   save()
 }
